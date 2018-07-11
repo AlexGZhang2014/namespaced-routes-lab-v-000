@@ -1,6 +1,6 @@
 class Admin::PreferencesController < ApplicationController
   def index
-    @preference = Preference.
+    
   end
   
   def new
@@ -8,7 +8,7 @@ class Admin::PreferencesController < ApplicationController
   end
   
   def show
-    redirect_to admin_preferences
+    @preference = Preference.find_by(id:)
   end
   
 end
