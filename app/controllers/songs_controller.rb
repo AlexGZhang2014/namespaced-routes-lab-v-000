@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
   def index
+    @preference = Preference.first
     if params[:artist_id]
       @artist = Artist.find_by(id: params[:artist_id])
       if @artist.nil?
@@ -8,7 +9,7 @@ class SongsController < ApplicationController
         @songs = @artist.songs
       end
     else
-      @preference = Preference.first
+      
       if @preference.song_sort_order == "ASC"
         @songs = Song.all.order(:title)
       elsif @preference.song_sort_order == "DESC"
