@@ -7,6 +7,10 @@ class Admin::PreferencesController < ApplicationController
     @preference = Preference.new
   end
   
+  def create
+    @preference = Preference.create(pref_params)
+  end
+  
   def show
     @preference = Preference.find(params[:id])
   end
