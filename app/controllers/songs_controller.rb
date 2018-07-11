@@ -10,7 +10,7 @@ class SongsController < ApplicationController
       end
     else
       if @preference && @preference.song_sort_order
-        @songs = Song.all.order(:title)
+        @songs = Song.order(title: @preference.song_sort_order)
       else
         @songs = Song.all
       end
