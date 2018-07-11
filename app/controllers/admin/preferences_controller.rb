@@ -24,6 +24,6 @@ class Admin::PreferencesController < ApplicationController
   private
   
     def pref_params
-      params.require(:preference).permit(:song_sort_order, :artist_sort_order, :allow_create_songs, :allow_create_artists, :id)
+      params.require(:preference).permit(:song_sort_order, :artist_sort_order, :allow_create_songs, :allow_create_artists)
     end
 end
