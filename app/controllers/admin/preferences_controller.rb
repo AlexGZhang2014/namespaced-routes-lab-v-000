@@ -1,6 +1,6 @@
 class Admin::PreferencesController < ApplicationController
   def index
-    @preference = Preference.last
+    @preference = Preference.first_or_create()
   end
   
   def new
