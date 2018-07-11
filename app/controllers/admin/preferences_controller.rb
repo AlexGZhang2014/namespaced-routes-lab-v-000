@@ -1,5 +1,14 @@
 class Admin::PreferencesController < ApplicationController
   def index
-    @preference = Preference.create(song_sort_order: "ASC", artist_sort_order: "ASC", allow_create_songs: true, allow_create_artists: true)
+    @preference = Preference.
   end
+  
+  def new
+    @preference = Preference.new
+  end
+  
+  def show
+    redirect_to admin_preferences
+  end
+  
 end
