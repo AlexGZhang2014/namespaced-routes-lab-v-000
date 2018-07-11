@@ -10,9 +10,9 @@ class SongsController < ApplicationController
     else
       @preference = Preference.first
       if @preference.song_sort_order == "ASC"
-        @songs = Song.all.order(:name)
+        @songs = Song.all.order(:title)
       elsif @preference.song_sort_order == "DESC"
-        @songs = Song.all.order(:name).reverse
+        @songs = Song.all.order(:title).reverse
       else
         @songs = Song.all
       end
