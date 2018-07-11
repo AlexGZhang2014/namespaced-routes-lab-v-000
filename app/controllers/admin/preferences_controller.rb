@@ -8,7 +8,13 @@ class Admin::PreferencesController < ApplicationController
   end
   
   def create
-    @preference = Preference.create(pref_params)
+    @preference = Preference.new(pref_params)
+
+    if @preference.save
+      redirect_to @preference
+    else
+      render :new
+    end
   end
   
   def show
