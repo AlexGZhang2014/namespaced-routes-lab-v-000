@@ -8,7 +8,7 @@ class Admin::PreferencesController < ApplicationController
   end
   
   def show
-    @preference = Preference.find_by(id:)
+    @preference = Preference.find(params[:id])
   end
   
 end
