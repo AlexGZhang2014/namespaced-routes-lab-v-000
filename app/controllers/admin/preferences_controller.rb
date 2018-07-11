@@ -21,4 +21,9 @@ class Admin::PreferencesController < ApplicationController
     @preference = Preference.find(params[:id])
   end
   
+  private
+  
+    def pref_params
+      
+  
 end
